@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="#FEAF17">
+
+        <Button
+            android:id="@+id/button_receipt"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="30dp"
+            android:paddingTop="5dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:drawableTop="@mipmap/icon_receipt"
+            android:text="收款"/>
+
+        <Button
+            android:id="@+id/button_pay"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="40dp"
+            android:paddingTop="5dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:drawableTop="@mipmap/icon_pay"
+            android:text="充值"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="35dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="35dp">
+
+        <ImageButton
+            android:id="@+id/button_handle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@android:color/transparent"
+            android:src="@mipmap/icon_handle"/>
+
+        <ImageButton
+            android:id="@+id/button_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/transparent"
+            android:src="@mipmap/icon_search"/>
+
+        <ImageButton
+            android:id="@+id/button_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/transparent"
+            android:src="@mipmap/icon_phone"/>
+
+        <ImageButton
+            android:id="@+id/button_set"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/transparent"
+            android:src="@mipmap/icon_set"/>
+
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

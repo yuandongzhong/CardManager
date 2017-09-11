@@ -20,7 +20,7 @@ public class StartupActivity extends Activity {
                 startActivity(it);
                 StartupActivity.this.finish();
             }
-        }, 5*1000);
+        }, 2*1000);
     }
 
     Handler mHandler = new Handler();

@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         actionBarSetup();
 
+        // Setup button for Receipt
         Button receiptButton = (Button) findViewById(R.id.button_receipt);
         receiptButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -25,6 +26,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Setup button for Payment
+        Button payButton = (Button) findViewById(R.id.button_pay);
+        payButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, PayActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     /**

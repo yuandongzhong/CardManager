@@ -5,6 +5,7 @@ package co.bankoo.patrick.cardmanager;
  */
 
 import android.app.Activity;
+import android.os.Handler;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
@@ -37,7 +38,17 @@ public class DecimalFilter implements TextWatcher {
                         et.setFilters(fArray);
                     }
                     if (count > 2) {
-                        Toast.makeText(activity, "不能超出2个小数点", Toast.LENGTH_SHORT).show();
+
+                        final Toast toast = Toast.makeText(activity, "不能超出2个小数点", Toast.LENGTH_SHORT);
+                        toast.show();
+
+                        Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                toast.cancel();
+                            }
+                        }, 1000);
                     }
                     return false;
                 }

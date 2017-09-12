@@ -28,10 +28,20 @@ public class ActivityAdapter extends ArrayAdapter<ActivityItem> {
     public View getView(int position, View convertView, ViewGroup parent) {
         ActivityItem activity = getItem(position);
         View view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);
-        TextView title = (TextView) view.findViewById(R.id.table_cell_title);
-        TextView subtitle = (TextView) view.findViewById(R.id.table_cell_subtitle);
-        title.setText(activity.getTitle());
-        subtitle.setText(activity.getSubtitle());
+
+
+        if(resourceId == (R.layout.table_cell)) {
+            TextView title = (TextView) view.findViewById(R.id.table_cell_title);
+            title.setText(activity.getTitle());
+            TextView subtitle = (TextView) view.findViewById(R.id.table_cell_subtitle);
+            subtitle.setText(activity.getSubtitle());
+        }
+
+        if(resourceId == (R.layout.table_cell_2)) {
+            TextView title = (TextView) view.findViewById(R.id.table_cell_2_title);
+            title.setText(activity.getTitle());
+        }
+
         return view;
     }
 }

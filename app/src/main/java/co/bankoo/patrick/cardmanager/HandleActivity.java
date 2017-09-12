@@ -34,7 +34,7 @@ public class HandleActivity extends AppCompatActivity {
             Setup the list view here
          */
         initActivities();           // Initialize the activity data
-        ActivityAdapter adapter = new ActivityAdapter(HandleActivity.this, R.layout.table_view_action, activityItemList);
+        ActivityAdapter adapter = new ActivityAdapter(HandleActivity.this, R.layout.table_cell, activityItemList);
         ListView listView = (ListView) findViewById(R.id.handle_list_view);
         listView.setAdapter(adapter);
 

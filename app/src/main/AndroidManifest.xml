@@ -24,7 +24,8 @@
         </activity>
         <activity android:name=".PayActivity" />
         <activity android:name=".HandleActivity" />
-        <activity android:name=".NewCardActivity"></activity>
+        <activity android:name=".NewCardActivity" />
+        <activity android:name=".SearchActivity"></activity>
     </application>
 
 </manifest>

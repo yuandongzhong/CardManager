@@ -1,4 +1,4 @@
-package co.bankoo.patrick.cardmanager;
+package co.bankoo.patrick.cardmanager.Controllers;
 
 /**
  * Created by patrick on 10/09/2017.

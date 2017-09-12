@@ -1,16 +1,12 @@
 package co.bankoo.patrick.cardmanager;
 
-import android.app.Activity;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
-import static java.security.AccessController.getContext;
+import co.bankoo.patrick.cardmanager.Controllers.DecimalFilter;
 
 public class ReceiptActivity extends AppCompatActivity {
 
@@ -27,10 +23,10 @@ public class ReceiptActivity extends AppCompatActivity {
 
         activityTitle = "收款";
 
-        ActionBar actionBar = getSupportActionBar();
-        if(actionBar != null) {
-            actionBar.hide();               // Remove the default Action Bar
-        }
+//        ActionBar actionBar = getSupportActionBar();
+//        if(actionBar != null) {
+//            actionBar.hide();               // Remove the default Action Bar
+//        }
 
         barTitle = (TextView) findViewById(R.id.title_text);
         barTitle.setText(activityTitle);

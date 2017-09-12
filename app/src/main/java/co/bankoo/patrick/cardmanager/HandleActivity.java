@@ -1,7 +1,11 @@
 package co.bankoo.patrick.cardmanager;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -33,6 +37,34 @@ public class HandleActivity extends AppCompatActivity {
         ActivityAdapter adapter = new ActivityAdapter(HandleActivity.this, R.layout.table_view_action, activityItemList);
         ListView listView = (ListView) findViewById(R.id.handle_list_view);
         listView.setAdapter(adapter);
+
+
+        /*
+            Setup onClick events for list view
+         */
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                ActivityItem activityItem = activityItemList.get(i);
+                switch (activityItem.getTitle()) {
+                    case "开卡":
+                        Intent intent = new Intent(HandleActivity.this, NewCardActivity.class);
+                        startActivity(intent);
+                        break;
+                    case "补卡":
+                        Intent intent2 = new Intent(HandleActivity.this, NewCardActivity.class);
+                        startActivity(intent2);
+                        break;
+                    case "换卡":
+                        Intent intent3 = new Intent(HandleActivity.this, NewCardActivity.class);
+                        startActivity(intent3);
+                        break;
+                    default:
+                        Log.d("HandleActivity", "onItemClick: Invalid activityItem Title");
+                        break;
+                }
+            }
+        });
 
     }
     private void initActivities() {

@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme_NoActionBar">
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme" />
         <activity android:name=".ReceiptActivity" />
         <activity
             android:name=".StartupActivity"
@@ -23,7 +23,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".PayActivity" />
-        <activity android:name=".HandleActivity"></activity>
+        <activity android:name=".HandleActivity" />
+        <activity android:name=".NewCardActivity"></activity>
     </application>
 
 </manifest>

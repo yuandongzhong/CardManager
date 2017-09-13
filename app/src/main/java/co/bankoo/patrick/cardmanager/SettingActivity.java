@@ -1,6 +1,7 @@
 package co.bankoo.patrick.cardmanager;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -114,6 +115,9 @@ class SettingAdapter extends ArrayAdapter<SettingItem> {
         title.setText(settingItem.getTitle());
         subtitle.setText(settingItem.getSubtitle());
 
+        if(title.getText().equals("联系客服")) {
+            subtitle.setTextColor(Color.parseColor("#FEB33B"));
+        }
         return view;
     }
 }

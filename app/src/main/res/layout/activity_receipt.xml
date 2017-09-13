@@ -46,7 +46,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/receipt_button"
+        android:id="@+id/button_confirm_receipt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"

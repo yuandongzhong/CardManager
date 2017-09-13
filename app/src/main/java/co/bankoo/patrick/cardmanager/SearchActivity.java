@@ -36,7 +36,6 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private void initActivities() {
-
         ActivityItem searchCustomer = new ActivityItem("商户查询");
         activityItemList.add(searchCustomer);
 

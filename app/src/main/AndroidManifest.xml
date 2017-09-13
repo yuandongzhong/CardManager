@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="co.bankoo.patrick.cardmanager">
 
+    <uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -25,7 +27,8 @@
         <activity android:name=".PayActivity" />
         <activity android:name=".HandleActivity" />
         <activity android:name=".NewCardActivity" />
-        <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".SearchActivity" />
+        <activity android:name=".SettingActivity"></activity>
     </application>
 
 </manifest>

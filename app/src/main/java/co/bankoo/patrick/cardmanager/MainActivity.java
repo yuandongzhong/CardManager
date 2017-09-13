@@ -2,6 +2,7 @@ package co.bankoo.patrick.cardmanager;
 
 import android.app.ActionBar;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -56,6 +57,28 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        // Setup button for Setting
+        ImageButton settingButton = (ImageButton) findViewById(R.id.button_set);
+        settingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SettingActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // Setup button for Phone
+        ImageButton phoneButton = (ImageButton) findViewById(R.id.button_phone);
+        phoneButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent callIntent = new Intent(Intent.ACTION_DIAL);
+                callIntent.setData(Uri.parse("tel:110"));
+                startActivity(callIntent);
+            }
+        });
+
 
     }
 

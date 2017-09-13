@@ -29,15 +29,14 @@ public class ActivityAdapter extends ArrayAdapter<ActivityItem> {
         ActivityItem activity = getItem(position);
         View view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);
 
-
-        if(resourceId == (R.layout.table_cell)) {
+        if(resourceId == (R.layout.table_cell)) {                       // Setup for table_cell layout
             TextView title = (TextView) view.findViewById(R.id.table_cell_title);
             title.setText(activity.getTitle());
             TextView subtitle = (TextView) view.findViewById(R.id.table_cell_subtitle);
             subtitle.setText(activity.getSubtitle());
         }
 
-        if(resourceId == (R.layout.table_cell_2)) {
+        if(resourceId == (R.layout.table_cell_2)) {                     // Setup for table_cell_2 layout
             TextView title = (TextView) view.findViewById(R.id.table_cell_2_title);
             title.setText(activity.getTitle());
         }

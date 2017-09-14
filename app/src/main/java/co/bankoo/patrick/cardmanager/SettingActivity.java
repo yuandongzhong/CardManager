@@ -47,7 +47,6 @@ public class SettingActivity extends AppCompatActivity {
     }
 
     private void initListItem() {
-
         SettingItem versionCheck = new SettingItem("检查版本");
         versionCheck.setSubtitle("1.0.0");                       // Show current version
         settingItemList_S1.add(versionCheck);
@@ -64,13 +63,12 @@ public class SettingActivity extends AppCompatActivity {
 
         SettingItem aboutUs = new SettingItem("关于我们");
         settingItemList_S2.add(aboutUs);
-
     }
 }
 
 
 /*
-    Items on the setting page
+    Data structure for setting items
  */
 class SettingItem {
     private String title;               // title of the activity

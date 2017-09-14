@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="#F9F9F9"
+    android:orientation="vertical">
+
+    <co.bankoo.patrick.cardmanager.TitleBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top" />
+
+    <ImageView
+        android:id="@+id/transaction_icon_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:src="@mipmap/icon_finish"/>
+
+    <TextView
+        android:id="@+id/transaction_result_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="20dp"
+        android:text="充值成功"
+        />
+
+    <ListView
+        android:id="@+id/transaction_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white" />
+
+
+
+</LinearLayout>

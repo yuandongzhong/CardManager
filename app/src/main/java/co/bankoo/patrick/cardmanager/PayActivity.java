@@ -25,13 +25,10 @@ public class PayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pay);
 
+        /*
+            Set up action bar
+         */
         activityTitle = "充值";
-
-//        ActionBar actionBar = getSupportActionBar();
-//        if(actionBar != null) {
-//            actionBar.hide();               // Remove the default Action Bar
-//        }
-
         barTitle = (TextView) findViewById(R.id.title_text);
         barTitle.setText(activityTitle);
 

@@ -29,7 +29,8 @@
         <activity android:name=".NewCardActivity" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".SettingActivity" />
-        <activity android:name=".CardRechargeActivity"></activity>
+        <activity android:name=".CardRechargeActivity" />
+        <activity android:name=".TransactionActivity"></activity>
     </application>
 
 </manifest>

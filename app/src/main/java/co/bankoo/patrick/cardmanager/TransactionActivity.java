@@ -49,6 +49,7 @@ public class TransactionActivity extends AppCompatActivity {
          */
         Intent intent = getIntent();
         String taskName = intent.getStringExtra("task_name");
+        Log.d("TaskName", taskName);
 
 
         /*
@@ -69,7 +70,7 @@ public class TransactionActivity extends AppCompatActivity {
             case "充值":
                 resultText.setText("充值成功");
                 break;
-            case "付款":
+            case "收款":
                 resultText.setText("付款成功");
                 break;
             default:
@@ -78,16 +79,14 @@ public class TransactionActivity extends AppCompatActivity {
         }
     }
 
-    private void createRecord() {
-
-    }
-
-
     /*
      *  TODO: parse data from the cloud directly
      */
     private void initListItem() {
-        RecordItem rechargeAmount = new RecordItem("充值金额", "¥500.00");
+//        RecordItem amount = new RecordItem("充值金额", "¥500.00");
+        RecordItem amount = new RecordItem("收款金额", "¥500.00");
+        amount.setSubDetailPair("¥700.00", "¥200.00");
+
         RecordItem accountBalance = new RecordItem("卡内余额", "¥1000.00");
         RecordItem beneficiary = new RecordItem("收款方", "广州某某科技有限公司");
         RecordItem cardClass = new RecordItem("卡等级", "高级卡");
@@ -95,7 +94,7 @@ public class TransactionActivity extends AppCompatActivity {
         RecordItem orderNumber = new RecordItem("订单号", "4213141532423424");
         RecordItem finishTime = new RecordItem("完成时间", "2017-07-25 14:25");
 
-        recordItemList.add(rechargeAmount);
+        recordItemList.add(amount);
         recordItemList.add(accountBalance);
         recordItemList.add(beneficiary);
         recordItemList.add(cardClass);
@@ -112,8 +111,14 @@ public class TransactionActivity extends AppCompatActivity {
  */
 
 class RecordItem {
+
     private String title;
     private String detail;
+
+    // The subTitle and subDetail are for "收款金额" only
+    private String[] subTitle = { "原价", "优惠" };
+    private String[] subDetail = { "", "" };
+
 
     public RecordItem(String title, String detail) {
         this.title = title;
@@ -121,9 +126,16 @@ class RecordItem {
     }
 
     public String getTitle() { return title; }
-    public String getDetail() { return detail; }
-}
 
+    public String getDetail() { return detail; }
+
+    public void setSubDetailPair(String detail_1, String detail_2) {
+        this.subDetail[0] = detail_1;
+        this.subDetail[1] = detail_2;
+    }
+    public String[] getSubItemTitle() { return subTitle; }
+    public String[] getSubItemDetail() { return subDetail; }
+}
 
 /*
  *  Custom ArrayAdapter for recordItemList
@@ -144,20 +156,35 @@ class RecordAdapter extends ArrayAdapter<RecordItem> {
 
         TextView title = (TextView) view.findViewById(R.id.transaction_record_item_title);
         TextView detail = (TextView) view.findViewById(R.id.transaction_record_item_detail);
-
         title.setText(recordItem.getTitle());
         detail.setText(recordItem.getDetail());
 
-        // Hide the subItem by default (only activate for 收款金额）
-        View subItemCell = (View) view.findViewById(R.id.transaction_record_subItem);
+        /*
+         *  Logic for handling the sub items TextView
+         */
+        View subItemCell_1 = (View) view.findViewById(R.id.transaction_record_subItem_1);
+        View subItemCell_2 = (View) view.findViewById(R.id.transaction_record_subItem_2);
+
         if(!title.getText().equals("收款金额")) {
-            subItemCell.setVisibility(GONE);
+            subItemCell_1.setVisibility(GONE);                    // Hide the subItem by default (only activate for 收款金额）
+            subItemCell_2.setVisibility(GONE);
         } else {
-            // TODO: show sub item for 收款金额
+            /*
+             * Show sub item for "收款金额"
+             */
+            TextView subTitle_1 = (TextView) view.findViewById(R.id.transaction_record_subItem_title_1);
+            TextView subDetail_1 = (TextView) view.findViewById(R.id.transaction_record_subItem_detail_1);
+            TextView subTitle_2 = (TextView) view.findViewById(R.id.transaction_record_subItem_title_2);
+            TextView subDetail_2 = (TextView) view.findViewById(R.id.transaction_record_subItem_detail_2);
+
+            subTitle_1.setText(recordItem.getSubItemTitle()[0]);
+            subTitle_2.setText(recordItem.getSubItemTitle()[1]);
+            subDetail_1.setText(recordItem.getSubItemDetail()[0]);
+            subDetail_2.setText(recordItem.getSubItemDetail()[1]);
         }
 
         // Set the charge / payment amount text in red
-        if(title.getText().equals("充值金额") || title.getText().equals("付款金额")) {
+        if(title.getText().equals("充值金额") || title.getText().equals("收款金额")) {
             detail.setTextColor(Color.RED);
         }
 

@@ -35,31 +35,60 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/transaction_record_subItem"
+            android:id="@+id/transaction_record_subItem_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/transaction_record_subItem_title"
+                android:id="@+id/transaction_record_subItem_title_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="12dp"
+                android:layout_marginLeft="12dp"
                 android:gravity="left"
                 android:textSize="13sp"
                 android:textColor="@android:color/darker_gray"
                 android:text="Title" />
 
             <TextView
-                android:id="@+id/transaction_record_subItem_detail"
+                android:id="@+id/transaction_record_subItem_detail_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="12dp"
+                android:gravity="right"
+                android:textSize="13sp"
+                android:textColor="@android:color/darker_gray"
+                android:text="Detail" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/transaction_record_subItem_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/transaction_record_subItem_title_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:gravity="left"
+                android:text="Title"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/transaction_record_subItem_detail_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_margin="12dp"
                 android:gravity="right"
-                android:textSize="13sp"
+                android:text="Detail"
                 android:textColor="@android:color/darker_gray"
-                android:text="Detail" />
+                android:textSize="13sp" />
 
         </RelativeLayout>
 

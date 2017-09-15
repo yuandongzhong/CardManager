@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Card Manager</string>
+
+    <string-array name="sex_array">
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+
+    <string-array name="class_array">
+        <item>普通卡</item>
+        <item>高级卡</item>
+        <item>白金卡</item>
+    </string-array>
+
 </resources>

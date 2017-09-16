@@ -11,7 +11,7 @@
         android:layout_gravity="top" />
 
     <ImageView
-        android:id="@+id/transaction_icon_result"
+        android:id="@+id/handle_result_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -19,17 +19,17 @@
         android:src="@mipmap/icon_finish"/>
 
     <TextView
-        android:id="@+id/transaction_result_text"
+        android:id="@+id/handle_result_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_marginTop="6dp"
         android:layout_marginBottom="20dp"
-        android:text="充值成功"
+        android:text="完成"
         />
 
     <ListView
-        android:id="@+id/transaction_list_view"
+        android:id="@+id/handle_result_list_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/white" />

@@ -31,8 +31,10 @@
         <activity android:name=".SettingActivity" />
         <activity android:name=".CardRechargeActivity" />
         <activity android:name=".TransactionActivity" />
-        <activity android:name=".ReadCardActivity"
-            android:theme="@style/Theme.AppCompat.Translucent"/>
+        <activity
+            android:name=".ReadCardActivity"
+            android:theme="@style/Theme.AppCompat.Translucent" />
+        <activity android:name=".HandleResultActivity"></activity>
     </application>
 
 </manifest>

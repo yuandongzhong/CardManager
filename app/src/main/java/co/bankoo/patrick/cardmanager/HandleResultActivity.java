@@ -14,6 +14,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import co.bankoo.patrick.cardmanager.Controllers.BaseActivity;
 import co.bankoo.patrick.cardmanager.Models.RecordItem;
 
 import static android.view.View.GONE;
@@ -22,7 +23,7 @@ import static android.view.View.GONE;
  *  This activity is to show the result from "办理卡片"
  */
 
-public class HandleResultActivity extends AppCompatActivity {
+public class HandleResultActivity extends BaseActivity {
 
     String activityTitle;
     TextView barTitle;

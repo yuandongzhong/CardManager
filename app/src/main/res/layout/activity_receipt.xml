@@ -5,7 +5,7 @@
     android:background="#E8EBF2"
     android:orientation="vertical">
 
-    <co.bankoo.patrick.cardmanager.TitleBarLayout
+    <co.bankoo.patrick.cardmanager.Controllers.TitleBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

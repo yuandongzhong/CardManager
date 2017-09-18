@@ -11,7 +11,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CardRechargeActivity extends AppCompatActivity {
+import co.bankoo.patrick.cardmanager.Controllers.BaseActivity;
+
+public class CardRechargeActivity extends BaseActivity {
 
     String activityTitle;
     TextView barTitle;

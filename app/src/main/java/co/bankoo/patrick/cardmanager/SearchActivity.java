@@ -9,9 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import co.bankoo.patrick.cardmanager.Controllers.ActivityAdapter;
+import co.bankoo.patrick.cardmanager.Controllers.BaseActivity;
 import co.bankoo.patrick.cardmanager.Models.ActivityItem;
 
-public class SearchActivity extends AppCompatActivity {
+public class SearchActivity extends BaseActivity {
 
     private List<ActivityItem> activityItemList = new ArrayList<>();
     String activityTitle;

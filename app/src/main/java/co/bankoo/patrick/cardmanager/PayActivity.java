@@ -9,9 +9,10 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import co.bankoo.patrick.cardmanager.Controllers.BaseActivity;
 import co.bankoo.patrick.cardmanager.Controllers.DecimalFilter;
 
-public class PayActivity extends AppCompatActivity {
+public class PayActivity extends BaseActivity {
 
     EditText editText;
     Button confirmButton;          // Button for confirming the recharge amount

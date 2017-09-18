@@ -11,10 +11,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import co.bankoo.patrick.cardmanager.Controllers.BaseActivity;
+
 import static android.R.attr.id;
 import static co.bankoo.patrick.cardmanager.Controllers.Utility.hideSoftKeyboard;
 
-public class NewCardActivity extends AppCompatActivity {
+public class NewCardActivity extends BaseActivity {
 
     Button confirmButton;
 

@@ -8,9 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import co.bankoo.patrick.cardmanager.Controllers.BaseActivity;
 import co.bankoo.patrick.cardmanager.Controllers.DecimalFilter;
 
-public class ReceiptActivity extends AppCompatActivity {
+public class ReceiptActivity extends BaseActivity {
 
     EditText editText;
     Button confirmButton;          // Button for submitting

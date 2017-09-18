@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-public class ReadCardActivity extends AppCompatActivity {
+import co.bankoo.patrick.cardmanager.Controllers.BaseActivity;
+
+public class ReadCardActivity extends BaseActivity {
 
     ImageButton closeButton;
 

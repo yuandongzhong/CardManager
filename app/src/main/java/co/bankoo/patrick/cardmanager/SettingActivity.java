@@ -13,8 +13,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import co.bankoo.patrick.cardmanager.Controllers.BaseActivity;
 
-public class SettingActivity extends AppCompatActivity {
+
+public class SettingActivity extends BaseActivity {
 
     String activityTitle;
     TextView barTitle;

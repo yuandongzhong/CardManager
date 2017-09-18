@@ -1,4 +1,4 @@
-package co.bankoo.patrick.cardmanager;
+package co.bankoo.patrick.cardmanager.Controllers;
 
 import android.app.Activity;
 import android.content.Context;
@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+
+import co.bankoo.patrick.cardmanager.R;
 
 import static java.security.AccessController.getContext;
 

@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-public class StartupActivity extends Activity {
+import co.bankoo.patrick.cardmanager.Controllers.BaseActivity;
+
+public class StartupActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

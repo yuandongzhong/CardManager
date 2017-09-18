@@ -13,9 +13,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import co.bankoo.patrick.cardmanager.Controllers.ActivityAdapter;
+import co.bankoo.patrick.cardmanager.Controllers.BaseActivity;
 import co.bankoo.patrick.cardmanager.Models.ActivityItem;
 
-public class HandleActivity extends AppCompatActivity {
+public class HandleActivity extends BaseActivity {
 
     private List<ActivityItem> activityItemList = new ArrayList<>();
     String activityTitle;

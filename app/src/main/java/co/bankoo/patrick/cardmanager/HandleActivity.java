@@ -57,7 +57,7 @@ public class HandleActivity extends BaseActivity {
                         startActivity(intent2);
                         break;
                     case "换卡":
-                        Intent intent3 = new Intent(HandleActivity.this, NewCardActivity.class);
+                        Intent intent3 = new Intent(HandleActivity.this, ChangeCardActivity.class);
                         startActivity(intent3);
                         break;
                     default:

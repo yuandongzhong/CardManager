@@ -1,19 +1,26 @@
 package co.bankoo.patrick.cardmanager;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import co.bankoo.patrick.cardmanager.Controllers.BaseActivity;
+import co.bankoo.patrick.cardmanager.Models.ActivityItem;
 
 
 public class SettingActivity extends BaseActivity {
@@ -36,16 +43,13 @@ public class SettingActivity extends BaseActivity {
             Setup the list view here
          */
         initListItem();                 // Initialize the setting item list
-
         SettingAdapter adapter_S1 = new SettingAdapter(SettingActivity.this, R.layout.table_cell_3, settingItemList_S1);
         SettingAdapter adapter_S2 = new SettingAdapter(SettingActivity.this, R.layout.table_cell_3, settingItemList_S2);
-
         ListView listView_S1 = (ListView) findViewById(R.id.setting_list_view_s1);
         listView_S1.setAdapter(adapter_S1);
-
         ListView listView_S2 = (ListView) findViewById(R.id.setting_list_view_s2);
         listView_S2.setAdapter(adapter_S2);
-
+        setListIntent(listView_S1, listView_S2);
     }
 
     private void initListItem() {
@@ -66,6 +70,52 @@ public class SettingActivity extends BaseActivity {
         SettingItem aboutUs = new SettingItem("关于我们");
         settingItemList_S2.add(aboutUs);
     }
+
+    // Setup intents for setting items
+    private void setListIntent(ListView list1, ListView list2) {
+
+        // Setup for section #1
+        list1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                SettingItem settingItem = settingItemList_S1.get(i);
+                switch (settingItem.getTitle()) {
+                    case "检查版本":
+                        Toast.makeText(SettingActivity.this, "亲, 已经是最新版本", Toast.LENGTH_SHORT).show();
+                        break;
+                    case "修改密码":
+                        break;
+                    case "意见反馈":
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
+
+        // Setup for section #2
+        list2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                SettingItem settingItem = settingItemList_S2.get(i);
+                switch (settingItem.getTitle()) {
+                    case "联系客服":
+                        StringBuilder phoneNumber = new StringBuilder("tel:");
+                        phoneNumber.append(settingItem.getSubtitle());        // Call the number shown on the list view item
+                        Intent callIntent = new Intent(Intent.ACTION_DIAL);
+                        callIntent.setData(Uri.parse(phoneNumber.toString()));
+                        startActivity(callIntent);
+                        break;
+                    case "关于我们":
+                        Intent intent = new Intent(SettingActivity.this, AboutActivity.class);
+                        startActivity(intent);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
+    }
 }
 
 
@@ -75,20 +125,16 @@ public class SettingActivity extends BaseActivity {
 class SettingItem {
     private String title;               // title of the activity
     private String subtitle;
-
     SettingItem(String title) {
         this.title = title;
         this.subtitle = "";             // Subtitle is null by default
     }
-
     String getTitle() {
         return title;
     }
-
     String getSubtitle() {
         return subtitle;
     }
-
     void setSubtitle(String subtitle) {
         this.subtitle = subtitle;
     }
@@ -97,7 +143,6 @@ class SettingItem {
 /*
     Custom ArrayAdapter for settingItemList
  */
-
 class SettingAdapter extends ArrayAdapter<SettingItem> {
     private int resourceId;
 

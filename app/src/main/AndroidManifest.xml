@@ -37,7 +37,8 @@
         <activity android:name=".HandleResultActivity" />
         <activity android:name=".ReplaceCardActivity" />
         <activity android:name=".UserInfoActivity" />
-        <activity android:name=".ChangeCardActivity"></activity>
+        <activity android:name=".ChangeCardActivity" />
+        <activity android:name=".AboutActivity"></activity>
     </application>
 
 </manifest>

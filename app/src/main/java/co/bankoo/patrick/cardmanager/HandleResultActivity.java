@@ -1,8 +1,6 @@
 package co.bankoo.patrick.cardmanager;
 
 import android.content.Context;
-import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,8 +14,6 @@ import java.util.List;
 
 import co.bankoo.patrick.cardmanager.Controllers.BaseActivity;
 import co.bankoo.patrick.cardmanager.Models.RecordItem;
-
-import static android.view.View.GONE;
 
 /*
  *  This activity is to show the result from "办理卡片"
@@ -47,7 +43,7 @@ public class HandleResultActivity extends BaseActivity {
     }
 
     void showResult() {
-        HandleResultAdapter adapter = new HandleResultAdapter(HandleResultActivity.this, R.layout.handle_result_list, recordItemList);
+        HandleResultAdapter adapter = new HandleResultAdapter(HandleResultActivity.this, R.layout.list_view_2, recordItemList);
         ListView listView = (ListView) findViewById(R.id.handle_result_list_view);
         listView.setAdapter(adapter);
     }

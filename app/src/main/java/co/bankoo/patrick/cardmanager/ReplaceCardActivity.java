@@ -14,10 +14,9 @@ import android.widget.TextView;
 
 import co.bankoo.patrick.cardmanager.Controllers.BaseActivity;
 
-import static android.R.attr.id;
 import static co.bankoo.patrick.cardmanager.Controllers.Utility.hideSoftKeyboard;
 
-public class NewCardActivity extends BaseActivity {
+public class ReplaceCardActivity extends BaseActivity {
 
     Button confirmButton;
     String activityTitle;
@@ -26,34 +25,31 @@ public class NewCardActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_card);
-        setupUI(findViewById(R.id.activity_new_card));
+        setContentView(R.layout.activity_replace_card);
 
-        activityTitle = "办理卡片";
+        activityTitle = "补卡";
         barTitle = (TextView) findViewById(R.id.title_text);
         barTitle.setText(activityTitle);
 
-        confirmButton = (Button) findViewById(R.id.newcard_button_confirm);
+        setupUI(findViewById(R.id.activity_replace_card));
+
+        confirmButton = (Button) findViewById(R.id.replacecard_button_confirm);
         confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(NewCardActivity.this, ReadCardActivity.class);
+                Intent intent = new Intent(ReplaceCardActivity.this, UserInfoActivity.class);
+                intent.putExtra("task_name", activityTitle);
                 startActivity(intent);
             }
         });
 
-        // Spinner for 卡片等级
-        Spinner spinnerClass = (Spinner) findViewById(R.id.newcard_spinner_class);
-        ArrayAdapter<CharSequence> classAdapter = ArrayAdapter.createFromResource(this, R.array.class_array, android.R.layout.simple_spinner_item);
-        classAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerClass.setAdapter(classAdapter);
-
         // Spinner for 性别
-        Spinner spinnerSex = (Spinner) findViewById(R.id.newcard_spinner_sex);
+        Spinner spinnerSex = (Spinner) findViewById(R.id.replacecard_spinner_sex);
         ArrayAdapter<CharSequence> sexAdapter = ArrayAdapter.createFromResource(this, R.array.sex_array, android.R.layout.simple_spinner_item);
         sexAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerSex.setAdapter(sexAdapter);
     }
+
 
     // This method is to hide the keyboard by clicking on views other than TextEdit views
     public void setupUI(View view) {
@@ -62,7 +58,7 @@ public class NewCardActivity extends BaseActivity {
         if (!(view instanceof EditText)) {
             view.setOnTouchListener(new View.OnTouchListener() {
                 public boolean onTouch(View v, MotionEvent event) {
-                    hideSoftKeyboard(NewCardActivity.this);
+                    hideSoftKeyboard(ReplaceCardActivity.this);
                     return false;
                 }
             });

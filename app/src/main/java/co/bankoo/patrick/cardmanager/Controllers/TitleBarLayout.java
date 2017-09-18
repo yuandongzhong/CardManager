@@ -10,8 +10,6 @@ import android.widget.LinearLayout;
 
 import co.bankoo.patrick.cardmanager.R;
 
-import static java.security.AccessController.getContext;
-
 /**
  * Created by patrick on 10/09/2017.
  */
@@ -20,7 +18,7 @@ import static java.security.AccessController.getContext;
 public class TitleBarLayout extends LinearLayout {
     public TitleBarLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
-        LayoutInflater.from(context).inflate(R.layout.title_bar, this);
+        LayoutInflater.from(context).inflate(R.layout.bar_title, this);
 
         /*
             Setup the Go Back button on action bar

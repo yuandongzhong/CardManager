@@ -3,8 +3,6 @@ package co.bankoo.patrick.cardmanager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.speech.RecognizerResultsIntent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,6 +15,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import co.bankoo.patrick.cardmanager.Controllers.BaseActivity;
 import co.bankoo.patrick.cardmanager.Models.RecordItem;
 
 import static android.view.View.GONE;
@@ -27,11 +26,10 @@ import static android.view.View.GONE;
  */
 
 
-public class TransactionActivity extends AppCompatActivity {
+public class TransactionActivity extends BaseActivity {
 
     TextView barTitle;
     String activityTitle;
-
     private List<RecordItem> recordItemList = new ArrayList<>();
 
     @Override
@@ -63,10 +61,11 @@ public class TransactionActivity extends AppCompatActivity {
 
     void showRecord(String taskName) {
 
-        TextView resultText = (TextView) findViewById(R.id.transaction_result_text);
-        RecordAdapter adapter = new RecordAdapter(TransactionActivity.this, R.layout.transaction_record_list, recordItemList);
+        RecordAdapter adapter = new RecordAdapter(TransactionActivity.this, R.layout.list_view_1, recordItemList);
         ListView listView = (ListView) findViewById(R.id.transaction_list_view);
         listView.setAdapter(adapter);
+
+        TextView resultText = (TextView) findViewById(R.id.transaction_result_text);
 
         switch (taskName) {
             case "充值":

@@ -34,7 +34,9 @@
         <activity
             android:name=".ReadCardActivity"
             android:theme="@style/Theme.AppCompat.Translucent" />
-        <activity android:name=".HandleResultActivity"></activity>
+        <activity android:name=".HandleResultActivity" />
+        <activity android:name=".ReplaceCardActivity" />
+        <activity android:name=".UserInfoActivity"></activity>
     </application>
 
 </manifest>

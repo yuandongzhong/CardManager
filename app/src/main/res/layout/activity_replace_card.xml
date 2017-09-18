@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_replace_card"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+
+    <co.bankoo.patrick.cardmanager.Controllers.TitleBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <EditText
+        android:id="@+id/replacecard_edit_phone"
+        style="@style/form_text_edit_style"
+        android:hint="手机号码" />
+
+    <EditText
+        android:id="@+id/replacecard_edit_id"
+        style="@style/form_text_edit_style"
+        android:hint="身份证号码" />
+
+    <EditText
+        android:id="@+id/replacecard_edit_name"
+        style="@style/form_text_edit_style"
+        android:hint="姓名" />
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rect_text_edit"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+        <Spinner
+            android:id="@+id/replacecard_spinner_sex"
+            style="@style/form_spinner_style" />
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/replacecard_button_confirm"
+        style="@style/button_confirm_style"
+        android:text="查询" />
+
+
+
+</LinearLayout>

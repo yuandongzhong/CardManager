@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,6 +30,7 @@ public class SettingActivity extends BaseActivity {
     TextView barTitle;
     private List<SettingItem> settingItemList_S1  = new ArrayList<>();                  // Items for list view session 1
     private List<SettingItem> settingItemList_S2  = new ArrayList<>();                  // Items for list view session 2
+    Button logoutButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +52,20 @@ public class SettingActivity extends BaseActivity {
         ListView listView_S2 = (ListView) findViewById(R.id.setting_list_view_s2);
         listView_S2.setAdapter(adapter_S2);
         setListIntent(listView_S1, listView_S2);
+
+        /*
+            Setup Logout button
+         */
+        logoutButton = (Button) findViewById(R.id.setting_button_logout);
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SettingActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 
     private void initListItem() {

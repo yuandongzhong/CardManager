@@ -40,7 +40,8 @@
         <activity android:name=".ChangeCardActivity" />
         <activity android:name=".AboutActivity" />
         <activity android:name=".FeedbackActivity" />
-        <activity android:name=".PasswordChangeActivity"></activity>
+        <activity android:name=".PasswordChangeActivity" />
+        <activity android:name=".LoginActivity"></activity>
     </application>
 
 </manifest>

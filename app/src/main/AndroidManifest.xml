@@ -39,7 +39,8 @@
         <activity android:name=".UserInfoActivity" />
         <activity android:name=".ChangeCardActivity" />
         <activity android:name=".AboutActivity" />
-        <activity android:name=".FeedbackActivity"></activity>
+        <activity android:name=".FeedbackActivity" />
+        <activity android:name=".PasswordChangeActivity"></activity>
     </application>
 
 </manifest>

@@ -84,10 +84,12 @@ public class SettingActivity extends BaseActivity {
                         Toast.makeText(SettingActivity.this, "亲, 已经是最新版本", Toast.LENGTH_SHORT).show();
                         break;
                     case "修改密码":
+                        Intent toChangePass = new Intent(SettingActivity.this, PasswordChangeActivity.class);
+                        startActivity(toChangePass);
                         break;
                     case "意见反馈":
-                        Intent intent = new Intent(SettingActivity.this, FeedbackActivity.class);
-                        startActivity(intent);
+                        Intent toFeedback = new Intent(SettingActivity.this, FeedbackActivity.class);
+                        startActivity(toFeedback);
                         break;
                     default:
                         break;

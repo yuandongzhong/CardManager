@@ -26,6 +26,7 @@
         android:text="登录" />
 
     <Button
+        android:id="@+id/login_button_forget_pass"
         android:layout_width="wrap_content"
         android:layout_height="24dp"
         android:layout_marginRight="20dp"

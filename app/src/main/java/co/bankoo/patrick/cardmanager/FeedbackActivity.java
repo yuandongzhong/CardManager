@@ -4,7 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class FeedbackActivity extends AppCompatActivity {
+import co.bankoo.patrick.cardmanager.Controllers.BaseActivity;
+
+public class FeedbackActivity extends BaseActivity {
 
     String activityTitle;
     TextView barTitle;

@@ -9,11 +9,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class LoginActivity extends AppCompatActivity {
+import co.bankoo.patrick.cardmanager.Controllers.BaseActivity;
+
+public class LoginActivity extends BaseActivity {
 
     String activityTitle;
     TextView barTitle;
     Button loginButton;
+    Button forgetPassButton;
     EditText accountInput;
     EditText passwordInput;
 
@@ -33,6 +36,16 @@ public class LoginActivity extends AppCompatActivity {
 
         // Setup logic for the login button
         setLoginButton();
+
+        // Setup logic for the forget password button
+        forgetPassButton = (Button) findViewById(R.id.login_button_forget_pass);
+        forgetPassButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, ForgetPassActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void setLoginButton() {

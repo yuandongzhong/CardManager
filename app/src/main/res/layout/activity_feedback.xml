@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android ="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <co.bankoo.patrick.cardmanager.Controllers.TitleBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/rect_text_edit">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请填写反馈内容"
+            android:inputType="textMultiLine"
+            android:layout_margin="16dp"
+            android:background="@android:color/transparent"/>
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/feedback_button_send"
+        style="@style/button_confirm_style"
+        android:text="提交" />
+
+
+</LinearLayout>

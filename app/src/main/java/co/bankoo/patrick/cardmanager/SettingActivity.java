@@ -86,6 +86,8 @@ public class SettingActivity extends BaseActivity {
                     case "修改密码":
                         break;
                     case "意见反馈":
+                        Intent intent = new Intent(SettingActivity.this, FeedbackActivity.class);
+                        startActivity(intent);
                         break;
                     default:
                         break;
